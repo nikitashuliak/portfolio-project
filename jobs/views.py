@@ -1,3 +1,7 @@
 from django.shortcuts import render
 
-# Create your views here.
+from .models import Job
+
+def homepage(request):
+    jobs = Job.objects
+    return render(request, 'jobs/homepage.html', {'jobs': jobs})
